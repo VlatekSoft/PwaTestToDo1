@@ -1,3 +1,4 @@
+/* Сброс стилей для всех элементов */
 * {
     margin: 0;
     padding: 0;
@@ -5,40 +6,50 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Стили для тела страницы */
 body {
+    /* Градиентный фон страницы */
     background: linear-gradient(135deg, #808080 0%, #404040 100%);
     min-height: 100vh;
+    /* Центрирование содержимого на странице */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
+/* Основной контейнер приложения */
 .container {
     width: 100%;
     max-width: 500px;
 }
 
+/* Стиль заголовка приложения */
 h1 {
     color: white;
     text-align: center;
     margin-bottom: 20px;
     font-size: 2.5rem;
+    /* Тень для текста */
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Контейнер для приложения списка задач */
 .todo-app {
     background: white;
     border-radius: 10px;
     padding: 20px;
+    /* Тень для контейнера */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Стиль формы добавления задач */
 #task-form {
     display: flex;
     margin-bottom: 20px;
 }
 
+/* Стиль поля ввода новой задачи */
 #task-input {
     flex: 1;
     padding: 12px;
@@ -46,13 +57,16 @@ h1 {
     border-radius: 4px 0 0 4px;
     font-size: 16px;
     outline: none;
+    /* Анимация изменения цвета границы при фокусе */
     transition: border-color 0.3s;
 }
 
+/* Стиль поля ввода при фокусе */
 #task-input:focus {
     border-color: #764ba2;
 }
 
+/* Стиль кнопки добавления задачи */
 #add-button {
     background: #764ba2;
     color: white;
@@ -61,53 +75,64 @@ h1 {
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     font-size: 16px;
+    /* Анимация изменения цвета фона при наведении */
     transition: background 0.3s;
 }
 
+/* Стиль кнопки добавления при наведении */
 #add-button:hover {
     background: #667eea;
 }
 
+/* Контейнер для кнопок фильтрации */
 .filters {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    gap: 10px;
+    gap: 10px; /* Отступ между кнопками */
 }
 
+/* Стиль кнопок фильтрации */
 .filter-btn {
     background: transparent;
     border: 1px solid #ddd;
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
+    /* Анимация изменения стилей при наведении */
     transition: all 0.3s;
 }
 
+/* Стиль активной кнопки фильтра */
 .filter-btn.active {
     background: #764ba2;
     color: white;
     border-color: #764ba2;
 }
 
+/* Стиль списка задач */
 #task-list {
     list-style: none;
     margin-bottom: 20px;
 }
 
+/* Стиль элемента задачи */
 .task-item {
     display: flex;
     align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid #eee;
+    /* Анимация появления новой задачи */
     animation: fadeIn 0.5s;
 }
 
+/* Определение анимации появления */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Стиль чекбокса задачи */
 .task-checkbox {
     margin-right: 10px;
     width: 20px;
@@ -115,42 +140,52 @@ h1 {
     cursor: pointer;
 }
 
+/* Стиль текста задачи */
 .task-text {
     flex: 1;
     font-size: 16px;
+    /* Анимация изменения цвета при выполнении */
     transition: color 0.3s;
 }
 
+/* Стиль текста выполненной задачи */
 .completed .task-text {
     text-decoration: line-through;
     color: #aaa;
 }
 
+/* Контейнер для кнопок действий с задачей */
 .task-actions {
     display: flex;
-    gap: 10px;
+    gap: 10px; /* Отступ между кнопками */
 }
 
+/* Общие стили для кнопок редактирования и удаления */
 .edit-btn, .delete-btn {
     background: transparent;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    /* Анимация изменения цвета при наведении */
     transition: color 0.3s;
 }
 
+/* Стиль кнопки редактирования */
 .edit-btn {
     color: #667eea;
 }
 
+/* Стиль кнопки удаления */
 .delete-btn {
     color: #ff6b6b;
 }
 
+/* Стиль кнопок при наведении */
 .edit-btn:hover, .delete-btn:hover {
     opacity: 0.7;
 }
 
+/* Контейнер для статистики задач */
 .task-stats {
     display: flex;
     justify-content: space-between;
@@ -159,42 +194,51 @@ h1 {
     color: #666;
 }
 
+/* Стиль кнопки очистки выполненных задач */
 #clear-completed {
     background: transparent;
     border: none;
     color: #764ba2;
     cursor: pointer;
+    /* Анимация изменения прозрачности при наведении */
     transition: opacity 0.3s;
 }
 
+/* Стиль кнопки очистки при наведении */
 #clear-completed:hover {
     opacity: 0.7;
 }
 
-/* Responsive adjustments */
+/* Адаптивные настройки для мобильных устройств */
 @media (max-width: 480px) {
+    /* Уменьшение отступов контейнера */
     .container {
         padding: 10px;
     }
     
+    /* Уменьшение размера заголовка */
     h1 {
         font-size: 2rem;
     }
     
+    /* Уменьшение размеров поля ввода и кнопки */
     #task-input, #add-button {
         padding: 10px;
         font-size: 14px;
     }
     
+    /* Уменьшение размеров кнопок фильтрации */
     .filter-btn {
         padding: 6px 10px;
         font-size: 12px;
     }
     
+    /* Уменьшение размера текста задачи */
     .task-text {
         font-size: 14px;
     }
     
+    /* Уменьшение размера текста статистики */
     .task-stats {
         font-size: 12px;
     }
