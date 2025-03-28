@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Мета-теги для настройки кодировки и области просмотра -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Цвет темы для мобильных браузеров -->
     <meta name="theme-color" content="#764ba2">
     <title>To-Do List App</title>
+    <!-- Подключение стилей приложения -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Подключение иконок Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Файл манифеста для PWA (Progressive Web App) -->
     <link rel="manifest" href="manifest.json">
+    <!-- Иконки для браузера и мобильных устройств -->
     <link rel="icon" href="icon-192.png" type="image/png">
     <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
+    <!-- Основной контейнер приложения -->
     <div class="container">
+        <!-- Заголовок приложения -->
         <h1>To-Do List</h1>
+        <!-- Контейнер для приложения списка задач -->
         <div class="todo-app">
+            <!-- Форма для добавления новых задач -->
             <form id="task-form">
                 <input type="text" id="task-input" placeholder="Add a new task..." required>
                 <button type="submit" id="add-button">Add</button>
             </form>
+            <!-- Кнопки фильтрации задач -->
             <div class="filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="active">Active</button>
                 <button class="filter-btn" data-filter="completed">Completed</button>
             </div>
+            <!-- Список задач, который будет заполняться динамически -->
             <ul id="task-list">
-                <!-- Tasks will be added here dynamically -->
+                <!-- Задачи будут добавлены сюда динамически -->
             </ul>
+            <!-- Статистика задач и кнопка очистки завершенных -->
             <div class="task-stats">
                 <span id="tasks-counter">0 tasks left</span>
                 <button id="clear-completed">Clear Completed</button>
             </div>
         </div>
     </div>
+    <!-- Подключение основного JavaScript файла -->
     <script src="script.js"></script>
     <script>
-        // Register Service Worker
+        // Регистрация Service Worker для работы в офлайн-режиме
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./service-worker.js')
